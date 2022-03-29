@@ -17,7 +17,7 @@ SKIP_INSTALL="true"
 # List of test cases
 TEST="conformance functional stress"
 # LTP version
-LTP_VERSION="20180515"
+LTP_VERSION="20220329-shopee-0"
 
 LTP_PRE_INSTALL=/opt/ltp
 LTP_PATH=/opt/ltp/testcases/open_posix_testsuite
@@ -38,8 +38,8 @@ install_ltp_open_posix() {
     # shellcheck disable=SC2164
     cd "${LTP_PRE_INSTALL}"
     # shellcheck disable=SC2140
-    wget https://github.com/linux-test-project/ltp/releases/download/"${LTP_VERSION}"/ltp-full-"${LTP_VERSION}".tar.xz
-    tar --strip-components=1 -Jxf ltp-full-"${LTP_VERSION}".tar.xz
+    wget https://github.com/ZhangYet/ltp/archive/refs/tags/${LTP_VERSION}.tar.gz
+    tar --strip-components=1 -Jxf "${LTP_VERSION}".tar.xz
     ./configure --with-open-posix-testsuite
     # shellcheck disable=SC2164
     cd "${LTP_PATH}"
