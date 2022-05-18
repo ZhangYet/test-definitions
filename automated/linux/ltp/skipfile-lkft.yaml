@@ -383,3 +383,15 @@ skiplist:
       - all
     tests:
       - ima_violations
+
+  - reason: >
+      pty05, pty06 failed after change to bulleyes
+    url: http://10.129.110.175:12345/scheduler/job/1953
+    environments: prodcution
+    boards:
+      - all
+    branches:
+      - all
+    tests:
+      - pty05
+      - pty06
